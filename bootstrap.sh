@@ -26,7 +26,11 @@ mkdir -p ~/design
 PDK_ROOT=~/pdk
 PDK=sky130A
 
-echo "source $PDK_ROOT/$PDK/libs.tech/xschem/xschemrc" > ~/design/xschemrc
+cat << EOF > ~/design/xschemrc
+if {[info exists env(PDK_ROOT)] && $env(PDK_ROOT) ne ""} {
+    source $env(PDK_ROOT)/$env(PDK)/libs.tech/xschem/xschemrc
+}
+EOF
 
 #export VIRTUAL_ENV=$HOME/venv
 #export KLAYOUT_PYTHONPATH=$VIRTUAL_ENV/lib/python3.12/site-packages
