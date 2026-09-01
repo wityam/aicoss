@@ -27,8 +27,8 @@ PDK_ROOT=~/pdk
 PDK=sky130A
 
 cat << EOF > ~/design/xschemrc
-if {[info exists env(PDK_ROOT)] && $env(PDK_ROOT) ne ""} {
-    source $env(PDK_ROOT)/$env(PDK)/libs.tech/xschem/xschemrc
+if {[info exists env(PDK_ROOT)] && \$env(PDK_ROOT) ne ""} {
+    source \$env(PDK_ROOT)/\$env(PDK)/libs.tech/xschem/xschemrc
 }
 EOF
 
